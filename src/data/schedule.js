@@ -40,9 +40,10 @@ const MUSIC_ADDRESS = "Rue François Ruytinx 31, 1170 Watermaal-Bosvoorde, Belgi
 const GYM_ADDRESS = "Jean Van Horenbeeck 196, 1160 Auderghem (Brussels), Belgium";
 
 // Emergency contacts per activity type.
-const HOCKEY_CONTACT = { name: "Jolie Lagasse", phone: "+32 477 13 90 69" };
+const HOCKEY_CONTACT = { name: "Julie Lagasse", phone: "+32 477 13 90 69" };
 const HORSERIDING_CONTACT = { phone: "0494 49 71 77" };
 const MUSIC_CONTACT = { phone: "02 673 76 97" };
+const SPEECH_CONTACT = { name: "Sophie", phone: "+32 474 13 45 59" };
 
 export const days = [
   {
@@ -158,6 +159,7 @@ export const days = [
         person: "Nelly",
         time: "14:00 – 15:00",
         address: "Rue du Moulin à Papier 54, 1160 Brussels, Belgium",
+        contact: SPEECH_CONTACT,
       },
       {
         id: "wed-25-hockey",
