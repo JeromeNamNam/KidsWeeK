@@ -19,6 +19,9 @@
 //                                                  instead of the raw address,
 //                                                  while the map link still
 //                                                  points to `address`
+//        contact: { name: "...", phone: "..." }  → shows an "Emergency
+//                                                  contact" line (name is
+//                                                  optional, phone required)
 //   • `category` controls the accent color + icon:
 //        "hockey" | "horseriding" | "music" | "school" | "speech" | "gym"
 //   • `status` is optional: "optional" | "tbc" | "important"
@@ -35,6 +38,11 @@ const EQUIACADEMY_URL = "https://maps.google.com/?ftid=0x47c3db00757efe5b:0x1a12
 const SCHOOL_ADDRESS = "Avenue Joseph Chaudron 115, 1160 Auderghem (Brussels), Belgium";
 const MUSIC_ADDRESS = "Rue François Ruytinx 31, 1170 Watermaal-Bosvoorde, Belgium";
 const GYM_ADDRESS = "Jean Van Horenbeeck 196, 1160 Auderghem (Brussels), Belgium";
+
+// Emergency contacts per activity type.
+const HOCKEY_CONTACT = { name: "Jolie Lagasse", phone: "+32 477 13 90 69" };
+const HORSERIDING_CONTACT = { phone: "0494 49 71 77" };
+const MUSIC_CONTACT = { phone: "02 673 76 97" };
 
 export const days = [
   {
@@ -53,6 +61,7 @@ export const days = [
         time: "Time to be confirmed",
         status: "optional",
         note: "Optional activity.",
+        contact: HOCKEY_CONTACT,
       },
     ],
   },
@@ -73,6 +82,7 @@ export const days = [
         organizer: "EquiAcademy",
         mapsUrl: EQUIACADEMY_URL,
         status: "tbc",
+        contact: HORSERIDING_CONTACT,
       },
     ],
   },
@@ -128,6 +138,7 @@ export const days = [
         person: "Diego",
         time: "16:50 – 17:40",
         address: MUSIC_ADDRESS,
+        contact: MUSIC_CONTACT,
       },
     ],
   },
@@ -155,6 +166,7 @@ export const days = [
         person: "Diego",
         time: "14:30",
         status: "tbc",
+        contact: HOCKEY_CONTACT,
       },
       {
         id: "wed-25-horse",
@@ -165,6 +177,7 @@ export const days = [
         organizer: "EquiAcademy",
         mapsUrl: EQUIACADEMY_URL,
         note: "Possible direct drop-off after speech therapy.",
+        contact: HORSERIDING_CONTACT,
       },
     ],
   },
@@ -228,6 +241,7 @@ export const days = [
         person: "Diego",
         time: "16:50 – 17:40",
         address: MUSIC_ADDRESS,
+        contact: MUSIC_CONTACT,
       },
       {
         id: "fri-27-hockey",
@@ -237,6 +251,7 @@ export const days = [
         time: "17:30 – 18:30",
         status: "important",
         note: "Diego will arrive late because his music lesson overlaps with hockey.",
+        contact: HOCKEY_CONTACT,
       },
     ],
   },

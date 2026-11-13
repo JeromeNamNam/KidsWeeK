@@ -287,6 +287,14 @@ button {
   line-height: 1.4;
 }
 
+.activity-card__contact {
+  margin: 8px 0 0;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--accent, var(--ink-soft));
+  line-height: 1.4;
+}
+
 /* ── Category icon ──────────────────────────────────────────────────── */
 
 .category-icon {

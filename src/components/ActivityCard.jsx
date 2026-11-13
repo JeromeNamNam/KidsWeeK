@@ -38,6 +38,13 @@ export default function ActivityCard({ activity }) {
 
         <MapLink activity={activity} />
 
+        {activity.contact && (
+          <p className="activity-card__contact">
+            📞 Emergency contact: {activity.contact.name && `${activity.contact.name} · `}
+            {activity.contact.phone}
+          </p>
+        )}
+
         {activity.note && <p className="activity-card__note">{activity.note}</p>}
       </div>
     </div>
