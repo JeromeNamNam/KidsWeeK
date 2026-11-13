@@ -15,6 +15,10 @@
 //                                                  known but not mappable
 //                                                  (shows plain text, no link,
 //                                                  no "to be confirmed")
+//        locationName: "Collège Saint-Hubert"    → shows this friendly name
+//                                                  instead of the raw address,
+//                                                  while the map link still
+//                                                  points to `address`
 //   • `category` controls the accent color + icon:
 //        "hockey" | "horseriding" | "music" | "school" | "speech" | "gym"
 //   • `status` is optional: "optional" | "tbc" | "important"
@@ -87,6 +91,7 @@ export const days = [
         person: "Nelly",
         time: "16:00 – 17:00",
         address: SCHOOL_ADDRESS,
+        locationName: "Collège Saint-Hubert",
       },
       {
         id: "mon-23-pickup",
@@ -94,6 +99,7 @@ export const days = [
         title: "Pick up the kids",
         time: "17:20",
         address: SCHOOL_ADDRESS,
+        locationName: "Collège Saint-Hubert",
         note: "Nelly has after-school study (étude) until 17:00.",
       },
     ],
@@ -113,6 +119,7 @@ export const days = [
         person: "Nelly",
         time: "16:00 – 17:00",
         address: SCHOOL_ADDRESS,
+        locationName: "Collège Saint-Hubert",
       },
       {
         id: "tue-24-music",
@@ -184,6 +191,7 @@ export const days = [
         person: "Nelly",
         time: "16:00 – 17:00",
         address: SCHOOL_ADDRESS,
+        locationName: "Collège Saint-Hubert",
       },
       {
         id: "thu-26-pickup",
@@ -191,6 +199,7 @@ export const days = [
         title: "Pick up the kids",
         time: "17:20",
         address: SCHOOL_ADDRESS,
+        locationName: "Collège Saint-Hubert",
         note: "Nelly has after-school study (étude) until 17:00.",
       },
     ],
@@ -210,6 +219,7 @@ export const days = [
         person: "Nelly",
         time: "16:00 – 17:00",
         address: SCHOOL_ADDRESS,
+        locationName: "Collège Saint-Hubert",
       },
       {
         id: "fri-27-music",

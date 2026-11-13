@@ -4,7 +4,9 @@ import { resolveMapsUrl } from "../data/maps";
 // real location is known yet, a plain "Location to be confirmed" label
 // that is intentionally NOT a link. When the location is simply known but
 // has no mappable address (e.g. "at school"), set `locationLabel` on the
-// activity instead — it shows as plain, non-clickable text.
+// activity instead — it shows as plain, non-clickable text. Set
+// `locationName` to show a friendly place name (e.g. "Collège Saint-Hubert")
+// instead of the raw address, while the link still points to that address.
 export default function MapLink({ activity }) {
   const url = resolveMapsUrl(activity);
 
@@ -21,11 +23,11 @@ export default function MapLink({ activity }) {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={`Get directions${activity.address ? ` to ${activity.address}` : ""}`}
+      aria-label={`Get directions to ${activity.locationName || activity.address || "destination"}`}
     >
       <span className="map-link__icon">📍</span>
       <span className="map-link__text">
-        {activity.address || "Get directions"}
+        {activity.locationName || activity.address || "Get directions"}
       </span>
       <span className="map-link__chevron">›</span>
     </a>
