@@ -11,6 +11,10 @@
 //                                                  Google Maps place link)
 //        (neither)                              → shows "Location to be
 //                                                  confirmed", no fake link
+//        locationLabel: "School"                 → use when the place is
+//                                                  known but not mappable
+//                                                  (shows plain text, no link,
+//                                                  no "to be confirmed")
 //   • `category` controls the accent color + icon:
 //        "hockey" | "horseriding" | "music" | "school" | "speech"
 //   • `status` is optional: "optional" | "tbc" | "important"
@@ -58,6 +62,7 @@ export const days = [
         person: "Nelly",
         time: "Time to be confirmed",
         organizer: "EquiAcademy",
+        mapsUrl: EQUIACADEMY_URL,
         status: "tbc",
       },
     ],
@@ -102,7 +107,7 @@ export const days = [
         title: "After-school study (étude)",
         person: "Nelly",
         time: "Until 17:00",
-        status: "tbc",
+        locationLabel: "School",
       },
     ],
   },
