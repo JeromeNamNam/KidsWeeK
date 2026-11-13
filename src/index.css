@@ -1,0 +1,392 @@
+/* ───────────────────────────────────────────────────────────────────────
+   ONE WEEK WITH THE KIDS — global styles
+   Apple-inspired: light warm-grey canvas, large rounded cards, restrained
+   color, generous spacing, soft motion.
+   ─────────────────────────────────────────────────────────────────────── */
+
+:root {
+  --bg: #f5f3ef;
+  --card: #ffffff;
+  --ink: #1c1c1e;
+  --ink-soft: #6b6b70;
+  --ink-faint: #9b9ba1;
+  --border: rgba(60, 60, 67, 0.08);
+  --shadow: 0 10px 30px rgba(28, 28, 30, 0.06);
+  --shadow-soft: 0 2px 10px rgba(28, 28, 30, 0.05);
+  --radius-lg: 28px;
+  --radius-md: 20px;
+  --radius-sm: 14px;
+  --accent-default: #ff6f61;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  overflow-x: hidden;
+}
+
+body {
+  font-family: -apple-system, "SF Pro Text", "SF Pro Display", "Helvetica Neue",
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app {
+  max-width: 720px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+/* ── Hero header ─────────────────────────────────────────────────────── */
+
+.hero {
+  position: relative;
+  padding-top: calc(var(--safe-top) + 72px);
+  padding-bottom: 56px;
+  min-height: 300px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.15) 45%,
+    rgba(0, 0, 0, 0.62) 100%
+  );
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  padding: 0 24px;
+  width: 100%;
+}
+
+.hero__eyebrow {
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.hero__title {
+  margin: 0 0 8px;
+  font-size: 34px;
+  line-height: 1.12;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: #ffffff;
+  text-shadow: 0 1px 18px rgba(0, 0, 0, 0.18);
+}
+
+.hero__subtitle {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 450;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* ── Week list ───────────────────────────────────────────────────────── */
+
+.week {
+  padding: 20px 16px calc(40px + var(--safe-bottom));
+}
+
+.week__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ── Day card ────────────────────────────────────────────────────────── */
+
+.day-card {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: box-shadow 0.25s ease;
+}
+
+.day-card--open {
+  box-shadow: var(--shadow);
+}
+
+.day-card__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 18px;
+  text-align: left;
+  min-height: 44px;
+}
+
+.day-card__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.day-card__dateline {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.day-card__day {
+  font-size: 17px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.day-card__date {
+  font-size: 14px;
+  color: var(--ink-faint);
+  font-weight: 500;
+}
+
+.day-card__flag {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #c04a3d;
+  background: #fdeceb;
+  padding: 3px 9px;
+  border-radius: 100px;
+}
+
+.day-card__summary {
+  margin: 3px 0 0;
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.day-card__chevron {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  font-size: 20px;
+  color: var(--ink-faint);
+  transform: rotate(-90deg);
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.day-card__chevron--open {
+  transform: rotate(0deg);
+  color: var(--ink-soft);
+}
+
+.day-card__panel {
+  overflow: hidden;
+  transition: height 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.day-card__activities {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 14px 16px;
+}
+
+/* ── Activity card ───────────────────────────────────────────────────── */
+
+.activity-card {
+  display: flex;
+  gap: 12px;
+  padding: 14px;
+  background: var(--accent-tint, #f4f4f5);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.activity-card__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.activity-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.activity-card__title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 650;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+
+.activity-card__person {
+  margin-top: 2px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--accent, var(--ink-soft));
+}
+
+.activity-card__meta {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--ink-soft);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.activity-card__note {
+  margin: 8px 0 0;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+
+/* ── Category icon ──────────────────────────────────────────────────── */
+
+.category-icon {
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* ── Status badges ───────────────────────────────────────────────────── */
+
+.badge {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.badge--optional {
+  color: #5c6bc0;
+  background: #eceef9;
+}
+
+.badge--tbc {
+  color: #8a8a90;
+  background: #eeeeef;
+}
+
+.badge--important {
+  color: #c0392b;
+  background: #fbe9e7;
+}
+
+/* ── Map link ────────────────────────────────────────────────────────── */
+
+.map-link {
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2f6fed;
+  padding: 8px 12px;
+  background: rgba(47, 111, 237, 0.08);
+  border-radius: var(--radius-sm);
+  min-height: 36px;
+}
+
+.map-link__text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.map-link__chevron {
+  opacity: 0.6;
+}
+
+.map-link--tbc {
+  color: var(--ink-faint);
+  background: rgba(0, 0, 0, 0.04);
+  font-weight: 500;
+}
+
+/* ── Footer ──────────────────────────────────────────────────────────── */
+
+.footer {
+  text-align: center;
+  padding-top: 24px;
+  color: var(--ink-faint);
+  font-size: 13px;
+}
+
+/* ── Larger screens: a touch more breathing room, no redesign needed ──── */
+
+@media (min-width: 540px) {
+  .hero__title {
+    font-size: 42px;
+  }
+
+  .week {
+    padding: 28px 24px calc(48px + var(--safe-bottom));
+  }
+}
