@@ -16,7 +16,7 @@
 //                                                  (shows plain text, no link,
 //                                                  no "to be confirmed")
 //   • `category` controls the accent color + icon:
-//        "hockey" | "horseriding" | "music" | "school" | "speech"
+//        "hockey" | "horseriding" | "music" | "school" | "speech" | "gym"
 //   • `status` is optional: "optional" | "tbc" | "important"
 // ─────────────────────────────────────────────────────────────────────────
 
@@ -26,6 +26,11 @@ export const weekRange = "Saturday 21 – Friday 27 November 2026";
 
 // Exact Google Maps location requested for EquiAcademy.
 const EQUIACADEMY_URL = "https://maps.google.com/?ftid=0x47c3db00757efe5b:0x1a125d108eafc17f";
+
+// Shared addresses, reused across several activities below.
+const SCHOOL_ADDRESS = "Avenue Joseph Chaudron 115, 1160 Auderghem (Brussels), Belgium";
+const MUSIC_ADDRESS = "Rue François Ruytinx 31, 1170 Watermaal-Bosvoorde, Belgium";
+const GYM_ADDRESS = "Jean Van Horenbeeck 196, 1160 Auderghem (Brussels), Belgium";
 
 export const days = [
   {
@@ -73,15 +78,23 @@ export const days = [
     dayShort: "Mon",
     date: "23",
     month: "November",
-    summary: "17:20 — Pick up the kids",
+    summary: "Nelly — Study · 17:20 — Pick up the kids",
     activities: [
+      {
+        id: "mon-23-study",
+        category: "school",
+        title: "After-school study (étude)",
+        person: "Nelly",
+        time: "16:00 – 17:00",
+        address: SCHOOL_ADDRESS,
+      },
       {
         id: "mon-23-pickup",
         category: "school",
         title: "Pick up the kids",
         time: "17:20",
-        status: "tbc",
-        note: "Nelly has after-school study (étude).",
+        address: SCHOOL_ADDRESS,
+        note: "Nelly has after-school study (étude) until 17:00.",
       },
     ],
   },
@@ -91,23 +104,23 @@ export const days = [
     dayShort: "Tue",
     date: "24",
     month: "November",
-    summary: "Diego — Music academy · Nelly — Study",
+    summary: "Nelly — Study · Diego — Music academy",
     activities: [
+      {
+        id: "tue-24-study",
+        category: "school",
+        title: "After-school study (étude)",
+        person: "Nelly",
+        time: "16:00 – 17:00",
+        address: SCHOOL_ADDRESS,
+      },
       {
         id: "tue-24-music",
         category: "music",
         title: "Music academy · Solfège",
         person: "Diego",
         time: "16:50 – 17:40",
-        address: "Rue François Ruytinx 31, 1170 Watermaal-Bosvoorde, Belgium",
-      },
-      {
-        id: "tue-24-study",
-        category: "school",
-        title: "After-school study (étude)",
-        person: "Nelly",
-        time: "Until 17:00",
-        locationLabel: "School",
+        address: MUSIC_ADDRESS,
       },
     ],
   },
@@ -154,15 +167,31 @@ export const days = [
     dayShort: "Thu",
     date: "26",
     month: "November",
-    summary: "17:20 — Pick up the kids",
+    summary: "Diego — Gym · Nelly — Study · Pickup 17:20",
     activities: [
+      {
+        id: "thu-26-gym",
+        category: "gym",
+        title: "Gym",
+        person: "Diego",
+        time: "8:30",
+        address: GYM_ADDRESS,
+      },
+      {
+        id: "thu-26-study",
+        category: "school",
+        title: "After-school study (étude)",
+        person: "Nelly",
+        time: "16:00 – 17:00",
+        address: SCHOOL_ADDRESS,
+      },
       {
         id: "thu-26-pickup",
         category: "school",
         title: "Pick up the kids",
         time: "17:20",
-        status: "tbc",
-        note: "Nelly has after-school study (étude).",
+        address: SCHOOL_ADDRESS,
+        note: "Nelly has after-school study (étude) until 17:00.",
       },
     ],
   },
@@ -172,15 +201,23 @@ export const days = [
     dayShort: "Fri",
     date: "27",
     month: "November",
-    summary: "Diego — Music academy · Hockey training",
+    summary: "Nelly — Study · Diego — Music & Hockey",
     activities: [
+      {
+        id: "fri-27-study",
+        category: "school",
+        title: "After-school study (étude)",
+        person: "Nelly",
+        time: "16:00 – 17:00",
+        address: SCHOOL_ADDRESS,
+      },
       {
         id: "fri-27-music",
         category: "music",
         title: "Music academy · Solfège",
         person: "Diego",
         time: "16:50 – 17:40",
-        address: "Rue François Ruytinx 31, 1170 Watermaal-Bosvoorde, Belgium",
+        address: MUSIC_ADDRESS,
       },
       {
         id: "fri-27-hockey",

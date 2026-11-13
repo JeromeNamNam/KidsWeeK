@@ -31,6 +31,12 @@ export const categories = {
     tint: "#FBF0E7",
     emoji: "💬",
   },
+  gym: {
+    label: "Gym",
+    color: "#2E8B86",
+    tint: "#E7F4F3",
+    emoji: "🤸",
+  },
 };
 
 export function getCategory(key) {
