@@ -29,7 +29,7 @@
 
 export const weekTitle = "One Week With The Kids";
 export const weekSubtitle = "Little moments, big adventures.";
-export const weekRange = "Saturday 21 – Friday 27 November 2026";
+export const weekRange = "Friday 20 – Friday 27 November 2026";
 
 // Exact Google Maps location requested for EquiAcademy.
 const EQUIACADEMY_URL = "https://maps.google.com/?ftid=0x47c3db00757efe5b:0x1a125d108eafc17f";
@@ -49,11 +49,65 @@ const SPEECH_CONTACT = { name: "Sophie", phone: "+32 474 13 45 59" };
 const HOCKEY_SCHAELER_ADDRESS = "Av. Charles Schaller 87, 1160 Auderghem (Brussels), Belgium";
 const HOCKEY_SCHAELER_URL = "https://maps.app.goo.gl/DfzXhi2YrJzBuJBh7";
 
-// What to pack for a normal school day.
+// What to pack for a normal school day, and for Wednesday's half day.
 const SCHOOL_DAY_NOTE =
   "Dans le cartable : pic-nic, gourde, une boîte avec un fruit pour le matin et un 4h (biscuit) pour l'après-midi.";
+const SCHOOL_HALF_DAY_NOTE =
+  "École jusqu'à midi seulement. Dans le cartable : juste un fruit, pas de pic-nic.";
+
+// Reminder to check with Nelly before picking her up after study.
+const STUDY_PICKUP_TIP = "Tip: ask Nelly what time she'd like to be picked up after study.";
 
 export const days = [
+  {
+    id: "fri-20",
+    dayName: "Friday",
+    dayShort: "Fri",
+    date: "20",
+    month: "November",
+    summary: "School 8:30–16:00 · Nelly — Study · Diego — Music & Hockey",
+    activities: [
+      {
+        id: "fri-20-school",
+        category: "school",
+        title: "School",
+        person: "Nelly & Diego",
+        time: "8:30 – 16:00",
+        address: SCHOOL_ADDRESS,
+        locationName: "Collège Saint-Hubert",
+        note: SCHOOL_DAY_NOTE,
+      },
+      {
+        id: "fri-20-study",
+        category: "school",
+        title: "After-school study (étude)",
+        person: "Nelly",
+        time: "16:00 – 17:00",
+        address: SCHOOL_ADDRESS,
+        locationName: "Collège Saint-Hubert",
+        note: STUDY_PICKUP_TIP,
+      },
+      {
+        id: "fri-20-music",
+        category: "music",
+        title: "Music academy · Solfège",
+        person: "Diego",
+        time: "16:50 – 17:40",
+        address: MUSIC_ADDRESS,
+        contact: MUSIC_CONTACT,
+      },
+      {
+        id: "fri-20-hockey",
+        category: "hockey",
+        title: "Hockey training",
+        person: "Diego",
+        time: "17:30 – 18:30",
+        status: "important",
+        note: "Diego will arrive late because his music lesson overlaps with hockey.",
+        contact: HOCKEY_CONTACT,
+      },
+    ],
+  },
   {
     id: "sat-21",
     dayName: "Saturday",
@@ -159,6 +213,7 @@ export const days = [
         time: "16:00 – 17:00",
         address: SCHOOL_ADDRESS,
         locationName: "Collège Saint-Hubert",
+        note: STUDY_PICKUP_TIP,
       },
       {
         id: "tue-24-music",
@@ -177,7 +232,7 @@ export const days = [
     dayShort: "Wed",
     date: "25",
     month: "November",
-    summary: "School 8:30–16:00 · Speech therapy · Hockey · Horse riding",
+    summary: "School 8:30–12:00 · Speech therapy · Hockey · Horse riding",
     busiest: true,
     activities: [
       {
@@ -185,10 +240,10 @@ export const days = [
         category: "school",
         title: "School",
         person: "Nelly & Diego",
-        time: "8:30 – 16:00",
+        time: "8:30 – 12:00",
         address: SCHOOL_ADDRESS,
         locationName: "Collège Saint-Hubert",
-        note: SCHOOL_DAY_NOTE,
+        note: SCHOOL_HALF_DAY_NOTE,
       },
       {
         id: "wed-25-speech",
@@ -197,7 +252,6 @@ export const days = [
         person: "Nelly",
         time: "14:00 – 15:00",
         address: "Rue du Moulin à Papier 54, 1160 Brussels, Belgium",
-        note: "Nelly leaves school early for this appointment.",
         contact: SPEECH_CONTACT,
       },
       {
@@ -219,7 +273,7 @@ export const days = [
         time: "17:00 – 18:00",
         organizer: "EquiAcademy",
         mapsUrl: EQUIACADEMY_URL,
-        note: "Possible direct drop-off after speech therapy.",
+        note: "Tip: Nelly can be dropped off at 16:00 and picked up at 18:30 — she likes to spend more time there.",
         contact: HORSERIDING_CONTACT,
       },
     ],
@@ -277,45 +331,17 @@ export const days = [
     dayShort: "Fri",
     date: "27",
     month: "November",
-    summary: "School 8:30–16:00 · Nelly — Study · Diego — Music & Hockey",
+    summary: "Drop-off at school · Custody handover to Anelina",
     activities: [
       {
-        id: "fri-27-school",
+        id: "fri-27-dropoff",
         category: "school",
-        title: "School",
+        title: "Drop-off at school",
         person: "Nelly & Diego",
-        time: "8:30 – 16:00",
+        time: "8:30",
         address: SCHOOL_ADDRESS,
         locationName: "Collège Saint-Hubert",
-        note: SCHOOL_DAY_NOTE,
-      },
-      {
-        id: "fri-27-study",
-        category: "school",
-        title: "After-school study (étude)",
-        person: "Nelly",
-        time: "16:00 – 17:00",
-        address: SCHOOL_ADDRESS,
-        locationName: "Collège Saint-Hubert",
-      },
-      {
-        id: "fri-27-music",
-        category: "music",
-        title: "Music academy · Solfège",
-        person: "Diego",
-        time: "16:50 – 17:40",
-        address: MUSIC_ADDRESS,
-        contact: MUSIC_CONTACT,
-      },
-      {
-        id: "fri-27-hockey",
-        category: "hockey",
-        title: "Hockey training",
-        person: "Diego",
-        time: "17:30 – 18:30",
-        status: "important",
-        note: "Diego will arrive late because his music lesson overlaps with hockey.",
-        contact: HOCKEY_CONTACT,
+        note: "Grandpa's duty ends after this morning drop-off — the rest of the day is handled by Anelina.",
       },
     ],
   },
