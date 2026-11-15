@@ -49,6 +49,10 @@ const SPEECH_CONTACT = { name: "Sophie", phone: "+32 474 13 45 59" };
 const HOCKEY_SCHAELER_ADDRESS = "Av. Charles Schaller 87, 1160 Auderghem (Brussels), Belgium";
 const HOCKEY_SCHAELER_URL = "https://maps.app.goo.gl/DfzXhi2YrJzBuJBh7";
 
+// Saturday's hockey match venue (the park).
+const HOCKEY_PARK_ADDRESS = "Av. Charles Schaller 50, 1160 Auderghem (Brussels), Belgium";
+const HOCKEY_PARK_URL = "https://maps.app.goo.gl/fiVWJVqybhiLJWSG8";
+
 // What to pack for a normal school day, and for Wednesday's half day.
 const SCHOOL_DAY_NOTE =
   "Dans le cartable : pic-nic, gourde, une boîte avec un fruit pour le matin et un 4h (biscuit) pour l'après-midi.";
@@ -114,16 +118,18 @@ export const days = [
     dayShort: "Sat",
     date: "21",
     month: "November",
-    summary: "Diego — Hockey match",
+    summary: "Diego — Hockey match 10:30",
     activities: [
       {
         id: "sat-21-hockey",
         category: "hockey",
         title: "Hockey match",
         person: "Diego",
-        time: "Time to be confirmed",
+        time: "10:30",
+        address: HOCKEY_PARK_ADDRESS,
+        mapsUrl: HOCKEY_PARK_URL,
         status: "optional",
-        note: "Optional activity. No start/end time yet — it depends on the weather.",
+        note: "Tip: arrive by 10:00. Optional activity — end time not yet known.",
         contact: HOCKEY_CONTACT,
       },
     ],
