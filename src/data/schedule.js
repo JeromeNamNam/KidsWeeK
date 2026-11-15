@@ -45,6 +45,14 @@ const HORSERIDING_CONTACT = { phone: "0494 49 71 77" };
 const MUSIC_CONTACT = { phone: "02 673 76 97" };
 const SPEECH_CONTACT = { name: "Sophie", phone: "+32 474 13 45 59" };
 
+// Indoor hockey venue (École Schaeler, in front of the hockey park).
+const HOCKEY_SCHAELER_ADDRESS = "Av. Charles Schaller 87, 1160 Auderghem (Brussels), Belgium";
+const HOCKEY_SCHAELER_URL = "https://maps.app.goo.gl/DfzXhi2YrJzBuJBh7";
+
+// What to pack for a normal school day.
+const SCHOOL_DAY_NOTE =
+  "Dans le cartable : pic-nic, gourde, une boîte avec un fruit pour le matin et un 4h (biscuit) pour l'après-midi.";
+
 export const days = [
   {
     id: "sat-21",
@@ -61,7 +69,7 @@ export const days = [
         person: "Diego",
         time: "Time to be confirmed",
         status: "optional",
-        note: "Optional activity.",
+        note: "Optional activity. No start/end time yet — it depends on the weather.",
         contact: HOCKEY_CONTACT,
       },
     ],
@@ -79,10 +87,10 @@ export const days = [
         category: "horseriding",
         title: "Equestrian competition",
         person: "Nelly",
-        time: "Time to be confirmed",
+        time: "12:00 – 13:00",
         organizer: "EquiAcademy",
         mapsUrl: EQUIACADEMY_URL,
-        status: "tbc",
+        note: "Arrival at 12:00, competition starts at 13:00. End time not yet known.",
         contact: HORSERIDING_CONTACT,
       },
     ],
@@ -93,8 +101,18 @@ export const days = [
     dayShort: "Mon",
     date: "23",
     month: "November",
-    summary: "Nelly — Study · 17:20 — Pick up the kids",
+    summary: "School 8:30–16:00 · Nelly — Study · 17:20 — Pick up the kids",
     activities: [
+      {
+        id: "mon-23-school",
+        category: "school",
+        title: "School",
+        person: "Nelly & Diego",
+        time: "8:30 – 16:00",
+        address: SCHOOL_ADDRESS,
+        locationName: "Collège Saint-Hubert",
+        note: SCHOOL_DAY_NOTE,
+      },
       {
         id: "mon-23-study",
         category: "school",
@@ -121,8 +139,18 @@ export const days = [
     dayShort: "Tue",
     date: "24",
     month: "November",
-    summary: "Nelly — Study · Diego — Music academy",
+    summary: "School 8:30–16:00 · Nelly — Study · Diego — Music academy",
     activities: [
+      {
+        id: "tue-24-school",
+        category: "school",
+        title: "School",
+        person: "Nelly & Diego",
+        time: "8:30 – 16:00",
+        address: SCHOOL_ADDRESS,
+        locationName: "Collège Saint-Hubert",
+        note: SCHOOL_DAY_NOTE,
+      },
       {
         id: "tue-24-study",
         category: "school",
@@ -149,9 +177,19 @@ export const days = [
     dayShort: "Wed",
     date: "25",
     month: "November",
-    summary: "Speech therapy · Hockey · Horse riding",
+    summary: "School 8:30–16:00 · Speech therapy · Hockey · Horse riding",
     busiest: true,
     activities: [
+      {
+        id: "wed-25-school",
+        category: "school",
+        title: "School",
+        person: "Nelly & Diego",
+        time: "8:30 – 16:00",
+        address: SCHOOL_ADDRESS,
+        locationName: "Collège Saint-Hubert",
+        note: SCHOOL_DAY_NOTE,
+      },
       {
         id: "wed-25-speech",
         category: "speech",
@@ -159,6 +197,7 @@ export const days = [
         person: "Nelly",
         time: "14:00 – 15:00",
         address: "Rue du Moulin à Papier 54, 1160 Brussels, Belgium",
+        note: "Nelly leaves school early for this appointment.",
         contact: SPEECH_CONTACT,
       },
       {
@@ -166,8 +205,10 @@ export const days = [
         category: "hockey",
         title: "Indoor hockey training",
         person: "Diego",
-        time: "14:30",
-        status: "tbc",
+        time: "17:00 – 18:00",
+        mapsUrl: HOCKEY_SCHAELER_URL,
+        locationName: "École Schaeler (in front of the hockey park)",
+        note: "Av. Charles Schaller 87, 1160 Auderghem.",
         contact: HOCKEY_CONTACT,
       },
       {
@@ -189,7 +230,7 @@ export const days = [
     dayShort: "Thu",
     date: "26",
     month: "November",
-    summary: "Diego — Gym · Nelly — Study · Pickup 17:20",
+    summary: "Diego — Gym · School 8:30–16:00 · Nelly — Study · Pickup 17:20",
     activities: [
       {
         id: "thu-26-gym",
@@ -198,6 +239,17 @@ export const days = [
         person: "Diego",
         time: "8:30",
         address: GYM_ADDRESS,
+        note: "End time not yet known.",
+      },
+      {
+        id: "thu-26-school",
+        category: "school",
+        title: "School",
+        person: "Nelly & Diego",
+        time: "8:30 – 16:00",
+        address: SCHOOL_ADDRESS,
+        locationName: "Collège Saint-Hubert",
+        note: SCHOOL_DAY_NOTE,
       },
       {
         id: "thu-26-study",
@@ -225,8 +277,18 @@ export const days = [
     dayShort: "Fri",
     date: "27",
     month: "November",
-    summary: "Nelly — Study · Diego — Music & Hockey",
+    summary: "School 8:30–16:00 · Nelly — Study · Diego — Music & Hockey",
     activities: [
+      {
+        id: "fri-27-school",
+        category: "school",
+        title: "School",
+        person: "Nelly & Diego",
+        time: "8:30 – 16:00",
+        address: SCHOOL_ADDRESS,
+        locationName: "Collège Saint-Hubert",
+        note: SCHOOL_DAY_NOTE,
+      },
       {
         id: "fri-27-study",
         category: "school",
