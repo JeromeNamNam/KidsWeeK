@@ -37,6 +37,12 @@ export const categories = {
     tint: "#E7F4F3",
     emoji: "🤸",
   },
+  birthday: {
+    label: "Birthday",
+    color: "#D4578A",
+    tint: "#FCEAF2",
+    emoji: "🎂",
+  },
 };
 
 export function getCategory(key) {

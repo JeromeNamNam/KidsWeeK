@@ -49,10 +49,6 @@ const SPEECH_CONTACT = { name: "Sophie", phone: "+32 474 13 45 59" };
 const HOCKEY_SCHAELER_ADDRESS = "Av. Charles Schaller 87, 1160 Auderghem (Brussels), Belgium";
 const HOCKEY_SCHAELER_URL = "https://maps.app.goo.gl/DfzXhi2YrJzBuJBh7";
 
-// Saturday's hockey match venue (the park).
-const HOCKEY_PARK_ADDRESS = "Av. Charles Schaller 50, 1160 Auderghem (Brussels), Belgium";
-const HOCKEY_PARK_URL = "https://maps.app.goo.gl/fiVWJVqybhiLJWSG8";
-
 // What to pack for a normal school day, and for Wednesday's half day.
 const SCHOOL_DAY_NOTE =
   "Dans le cartable : pic-nic, gourde, une boîte avec un fruit pour le matin et un 4h (biscuit) pour l'après-midi.";
@@ -118,20 +114,13 @@ export const days = [
     dayShort: "Sat",
     date: "21",
     month: "November",
-    summary: "Diego — Hockey match 10:30–11:30",
+    summary: "🎂 Grandpa's birthday 10:00–20:00",
     activities: [
       {
-        id: "sat-21-hockey",
-        category: "hockey",
-        title: "Hockey match",
-        person: "Diego",
-        time: "10:30 – 11:30",
-        locationName: "Parc – Rasante",
-        address: HOCKEY_PARK_ADDRESS,
-        mapsUrl: HOCKEY_PARK_URL,
-        status: "optional",
-        note: "Meet-up at 10:00, match starts 10:30, ends 11:30. Goalkeeper: Nathaniel. Players: Reginald, Louis, Charles, Noah, Milan, Brieuc, Alexis, Charly, Ernest, Archibald and Diego.",
-        contact: HOCKEY_CONTACT,
+        id: "sat-21-birthday",
+        category: "birthday",
+        title: "🎂 Grandpa's birthday",
+        time: "10:00 – 20:00",
       },
     ],
   },
@@ -141,7 +130,7 @@ export const days = [
     dayShort: "Sun",
     date: "22",
     month: "November",
-    summary: "Nelly — Equestrian competition",
+    summary: "Nelly — Equestrian competition · 🎂 Diego — Friend's birthday",
     activities: [
       {
         id: "sun-22-equestrian",
@@ -153,6 +142,14 @@ export const days = [
         mapsUrl: EQUIACADEMY_URL,
         note: "Arrival at 12:00, competition starts at 13:00. End time not yet known.",
         contact: HORSERIDING_CONTACT,
+      },
+      {
+        id: "sun-22-birthday",
+        category: "birthday",
+        title: "🎂 Friend's birthday",
+        person: "Diego",
+        time: "14:00 – 17:00",
+        note: "Logistics: Anelina picks up Diego and brings him there.",
       },
     ],
   },
