@@ -217,7 +217,8 @@ export const days = [
         time: "16:00 – 17:00",
         address: SCHOOL_ADDRESS,
         locationName: "Collège Saint-Hubert",
-        note: STUDY_PICKUP_TIP,
+        status: "optional",
+        note: "Not mandatory today — ask Nelly if she'd rather come home earlier.",
       },
       {
         id: "tue-24-music",
